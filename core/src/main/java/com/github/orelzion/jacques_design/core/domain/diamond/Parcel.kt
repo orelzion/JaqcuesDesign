@@ -4,5 +4,5 @@ data class Parcel(
     val lotNumber: String,
     val diamonds: List<Diamond>
 ) {
-    val totalWeight = diamonds.sumByDouble { it.weigth }
+    val totalWeight = diamonds.sumByDouble { it.weight }
 }

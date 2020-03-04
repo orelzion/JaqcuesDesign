@@ -8,7 +8,7 @@ class ParcelRepository(private val dataSource: ParcelDataSource) {
     suspend fun addParcel(parcel: Parcel) = dataSource.add(parcel)
     suspend fun addDiamond(parcel: Parcel, diamond: Diamond) = dataSource.add(parcel, diamond)
     suspend fun removeParcel(parcel: Parcel) = dataSource.remove(parcel.lotNumber)
-    suspend fun removeDiamond(parcel: Parcel, diamond: Diamond) = dataSource.remove(parcel, diamond)
+    suspend fun removeDiamond(parcel: Parcel, diamond: Diamond) = dataSource.remove(parcel, diamond.lotNumber)
     suspend fun getParcel(lotNumber: String) = dataSource.get(lotNumber)
     suspend fun getAllParcels(limit: Int = Int.MAX_VALUE) = dataSource.getAll(limit)
     suspend fun updateParcel(parcel: Parcel) = dataSource.update(parcel)
